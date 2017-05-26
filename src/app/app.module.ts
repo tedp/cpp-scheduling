@@ -4,15 +4,19 @@ import { FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
+import { SchedulingModule } from './scheduling/scheduling.module';
+import { HelloComponent } from './hello/hello.component';
 
 @NgModule({
   declarations: [
-    AppComponent
+    AppComponent,
+    HelloComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    SchedulingModule
   ],
   providers: [],
   bootstrap: [AppComponent]

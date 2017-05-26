@@ -1,0 +1,23 @@
+  <header class="app-weekly-calendar-header">
+    <i class="fa fa-angle-left" ng-click="previous()"></i>
+    <span>{{startOfWorkingWeek.format("MMMM, DD")}} - {{endOfWorkingWeek.format("MMMM, DD")}}</span>
+    <i class="fa fa-angle-right" ng-click="next()"></i>
+  </header>
+  <div class="week names" >
+    <span class="day" *ngFor="let day of weekDays">{{day.dayOfWeek}} {{day.date.format("DD")}}</span>
+  </div>
+  <div class="week" *ngFor="let location of weeklyCalendarData">
+      <div class="location">{{location.name}}</div>
+      <span class="day" *ngFor="let day of location.days">
+        <div *ngFor="let slot of day.slots">
+          <div class="slot-heading">
+            <span>{{slot.slot}}</span>
+            <span>{{slot.session}}</span>
+          </div>
+          <div class="slot-title">{{slot.title}}</div>
+          <div class="slot-type">{{slot.type}}</div>
+        </div>
+      </span>
+  </div>
+        <!--ng-class="{ today: day.isToday, 'different-month': !day.isCurrentMonth, selected: day.date.isSame(selected) }"
+        ng-click="select(day)"-->
